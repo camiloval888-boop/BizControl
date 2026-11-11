@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#173B67">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="BizControl">
+  <title>BizControl</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="./icons/favicon-32.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark" aria-hidden="true">↗</div><div><strong>BizControl</strong><small id="business-subtitle">Tu negocio, bajo control</small></div></div>
+      <button class="icon-button" id="settings-open" aria-label="Abrir configuración" title="Configuración">⚙</button>
+    </header>
+    <main id="main" class="main-content">
+      <section id="welcome" class="welcome-card hidden">
+        <div class="welcome-mark">↗</div><p class="eyebrow">TU CENTRO DE GESTIÓN</p>
+        <h1>Bienvenido a BizControl</h1>
+        <p class="muted">Organizá tu negocio, controlá tus ventas y conocé tus resultados desde un solo lugar.</p>
+        <form id="welcome-form" class="form-grid">
+          <label>Nombre del negocio<input name="businessName" required maxlength="60" placeholder="Ej. Mi tienda"></label>
+          <label>Tipo de negocio<input name="businessType" maxlength="60" placeholder="Ej. Ropa y accesorios"></label>
+          <label>Moneda<select name="currency"><option value="ARS">Pesos argentinos (ARS)</option><option value="USD">Dólares estadounidenses (USD)</option><option value="EUR">Euros (EUR)</option></select></label>
+          <button class="primary full" type="submit">Comenzar <span>→</span></button>
+        </form>
+      </section>
+      <div id="view"></div>
+    </main>
+    <nav class="bottom-nav" aria-label="Navegación principal">
+      <button data-page="home" class="nav-item active"><span>⌂</span>Inicio</button>
+      <button data-page="sales" class="nav-item"><span>↗</span>Ventas</button>
+      <button data-page="products" class="nav-item"><span>▦</span>Productos</button>
+      <button data-page="expenses" class="nav-item"><span>−</span>Gastos</button>
+      <button data-page="reports" class="nav-item"><span>▥</span>Reportes</button>
+    </nav>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
